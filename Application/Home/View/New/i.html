@@ -1,0 +1,36 @@
+<!--公共头部-->
+<include file="Home@Public:header"/>
+
+<div class="Nbanner">
+    <div class="width1200">
+        <div class="NBsit">
+            <dl>
+                <dt>新闻资讯</dt>
+                <dd><img src="__PUBLIC__/Home/images/sit.png" width="19">当前位置：<a href="/">首页</a> > <a href="#">新闻资讯</a>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="NYbig">
+    <div class="width1200">
+        <div class="NEWcent">
+            <div class="NEWCtitle">
+                <dl>
+                    <dt>{$gg.title|htmlspecialchars_decode}</dt>
+                    <dd>时间：{$gg.create|date = "Y-m-d ",###}</dd>
+                </dl>
+            </div>
+            <div class="NEWCong">
+                {$gg.content|htmlspecialchars_decode}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--公共底部-->
+<include file="Home@Public:footer"/>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!--公共头部-->
+<include file="Enem@Public:header"/>
+<include file="Enem@Public:Middle"/>
+<link rel="stylesheet" href="__PUBLIC__/Home/css/amazeui.css">
+<link rel="stylesheet" href="__PUBLIC__/Home/css/jtree.css">
+<div class="NYbig">
+    <div class="width1200">
+        <div class="GRBbig">
+            <div class="GRBt">优秀课程</div>
+            <volist name="list" id="vo">
+                <div class="am-panel am-panel-default am-margin-top">
+                    <div class="am-panel-hd am-text-bold">最新课程</div>
+                    <ul class="am-panel-bd am-avg-md-3">
+                        <li>
+                            <div>
+                                <div class="am-u-sm-4 am-padding-horizontal-0">
+                                    <a href="{:U('/enem/the/info',array('id'=>$vo['id']))}">
+                                        <img class="am-img-thumbnail" width="109" height="150"
+                                             onerror="this.src='/images/java.png'" src="__PUBLIC__/update/{$vo.img}">
+                                    </a>
+                                </div>
+                                <div class="am-u-sm-8">
+                                    <a href="{:U('/enem/the/info',array('id'=>$vo['id']))}"
+                                       class="am-text-bold am-text-green">{$vo.name}</a>
+                                    <div class="am-padding-top-xs am-text-sm am-text-gray">{$vo.title}</div>
+                                </div>
+                            </div>
+                            <div class="am-clearfix am-padding-top-sm">
+                                <a class="am-btn am-btn-jtree am-radius am-text-sm"
+                                   href="{:U('/enem/the/info',array('id'=>$vo['id']))}">马上学习</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </volist>
+        </div>
+    </div>
+</div>
+<!--公共底部-->
+<include file="Home@Public:footer"/>
+</body>
+</html>
+
+

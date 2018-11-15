@@ -1,0 +1,160 @@
+<!--公共头部-->
+<include file="Enem@Public:header"/>
+<div class="Ibanner">
+    <div id="full-screen-slider">
+        <ul id="slides">
+            <li style="background:url('{$lb.img1}') no-repeat center top; background-size:cover; "></li>
+            <li style="background:url('{$lb.img2}') no-repeat center top; background-size:cover; "></li>
+            <li style="background:url('{$lb.img3}') no-repeat center top; background-size:cover; "></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div class="Ione">
+    <div class="width1200">
+        <div class="IObie">
+            <div class="IOBtitle">
+                <dl>
+                    <dt><span>TECHNICAL FRONTIERS</span></dt>
+                    <dd>技术前沿</dd>
+                </dl>
+            </div>
+            <div class="IOBtwo">
+                <volist name="gg" id="vo" offset="0" length='1'>
+                    <div class="IOBWleft left">
+                        <div class="IOBWimg"><a href="{:U('/enem/New/i',array('id'=>$vo['id']))}"><img
+                                src="__PUBLIC__/update/{$vo.img}" width="475"></a></div>
+                        <div class="IOBWnei">
+                            <dl>
+                                <dt><a href="{:U('/enem/New/i',array('id'=>$vo['id']))}"></a></dt>
+                                <dd><a href="{:U('/enem/New/i',array('id'=>$vo['id']))}">{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=0,230,'utf-8'}......</a>
+                                </dd>
+                            </dl>
+                            <div class="IOBWbottom">
+                                <a href="{:U('/enem/New/i',array('id'=>$vo['id']))}"><img src="__PUBLIC__/Home/images/m1.png"
+                                                                                     width="18"></a>
+                                <span>发布：{$vo.create|date = "m月.d日",###}</span>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </volist>
+                <div class="IOBWright right">
+                    <div class="IOBWlist">
+                        <ul>
+                            <volist name="gg" id="vo" offset="1" length='4'>
+                                <li style="margin:0;">
+                                    <div class="left IBWLIdate">
+                                        <dl>
+                                            <dt>{$vo.create|date = "d",###}</dt>
+                                            <dd>{$vo.create|date = "m",###}月</dd>
+                                        </dl>
+                                    </div>
+                                    <div class="right IBWLItext">
+                                        <dl>
+                                            <dt>
+                                                <a href="{:U('/enem/New/i',array('id'=>$vo['id']))}">{$vo.title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}......</a>
+                                            </dt>
+                                            <dd><a href="{:U('/enem/New/i',array('id'=>$vo['id']))}">{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}......</a>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="clear"></div>
+                                </li>
+                            </volist>
+                        </ul>
+                    </div>
+                    <div class="IOBWmore"><a href="{:U('/enem/New/index')}">查看更多</a></div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Itwo">
+    <div class="width1200">
+        <div class="IWBtitle">
+            <dl>
+                <dt><span>TEACHING TEAM</span></dt>
+                <dd>教学队伍</dd>
+            </dl>
+        </div>
+        <div class="IWcnet">
+            <div class="IWtable">
+                <ul>
+                    <volist name="tx" id="vo">
+                        <li class="data{$vo.id}" id="s_y_dang_{$vo.id}" onMouseOver="ai({$vo.id})">{$vo.name}</li>
+                    </volist>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            <div class="IWrong">
+                <volist name="txdata" id="vo">
+                    <div class="IWNlist" id="k1" style="float:left">
+                        <ul>
+                            <li style="margin-left:0;">
+                                <div class="IWimg">
+                                    <a href="{:U('/Act/i',array('id'=>$vo['id']))}">
+                                        <img style="width:278px;height: 278px;" src="/Public/update/{$vo.img}"
+                                             width="279">
+                                    </a>
+                                </div>
+                                <div class="IWten" style="text-align: center">
+                                    <dl>
+                                        <dt><a href="{:U('/Act/i',array('id'=>$vo['id']))}">{$vo.name}</a></dt>
+                                    </dl>
+                                </div>
+                                <div class="IWten" style="text-align: center">
+                                    <dl>
+                                        <dd><a href="{:U('/Act/i',array('id'=>$vo['id']))}">{$vo.ynum}&nbsp;&nbsp;&nbsp;&nbsp;{$vo.snum}</a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <div class="clear">
+                            </div>
+                        </ul>
+                    </div>
+                </volist>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="Ithree">
+    <div class="width1200">
+        <div class="IOBtitle">
+            <dl>
+                <dt><span style="background:#f7f7f7;">LEARNING ROUTE</span></dt>
+                <dd>学习路线</dd>
+            </dl>
+        </div>
+        <div class="IHtitle">精通JavaEE平台开发的java软件工程师，能够胜任各种行业的企业级软件开发工作；</div>
+        <div class="IHcent">
+            <div>{$tion.bb}</div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+</div>
+<include file="Home@Public:footer"/>
+<script>
+    function ai(data) {
+        var p = data;
+        $.ajax({
+            url: '{:U("/new/forder")}',
+            type: 'post',
+            data: {data: data},
+            datatype: 'json',
+            success: function (data) {
+                var str = '';
+                for (var key in data) {
+                    str += '<div class="IWNlist" id="k1" style="float:left"><ul><li style="margin-left:0;"><div class="IWimg" ><a href="{:U('/enem/Act/i',array('id'=>$vo['id']))}"><img style="width:278px;height: 278px;" src="__PUBLIC__/update/' + data[key]['img'] + '"" width="279"></a></div><div class="IWten" style="text-align: center" ><dl><dt><a href="{:U('/enem/Act/i',array('id'=>$vo['id']))}">' + data[key]['name'] + '</a></dt></dl></div><div class="IWten" style="text-align: center"><dl><dd><a href="{:U('/enem/Act/i',array('id'=>$vo['id']))}">' + data[key]['ynum'] + '&nbsp;&nbsp;&nbsp;&nbsp;' + data[key]['snum'] + '</a></dd></dl></div>li><div class="clear"></div></ul></div>';
+                }
+                $(".IWrong").html(str);
+            }
+        });
+    }
+</script>
+</body>
+</html>

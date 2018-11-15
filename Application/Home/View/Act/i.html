@@ -1,0 +1,40 @@
+<!--公共头部-->
+<include file="Home@Public:header"/>
+<include file="Home@Public:Middle"/>
+<style>
+    .m {
+        width: 740px;
+        height: 400px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 100px;
+    }
+</style>
+<div class="NYbig">
+    <div class="width1200">
+
+        <div class="XGone">
+            {$gg.content|htmlspecialchars_decode}
+        </div>
+
+
+    </div>
+</div>
+<include file="Home@Public:footer"/>
+</body>
+</html>
+
+<!-- 验证是否登录 -->
+<script type="text/javascript">
+    function verificationUserData() {
+        $.ajax({
+            url: "{:U('/Home/log/is_login')}",
+            type: "POST",
+            success: function (data) {
+                if (data.data == 'on') {
+                    $('.cd-popup').addClass('is-visible');
+                }
+            }
+        });
+    }
+</script>>

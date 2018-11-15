@@ -1,0 +1,41 @@
+<!--公共头部-->
+<include file="Home@Public:header"/>
+<include file="Home@Public:Middle"/>
+
+<div class="NYbig">
+    <div class="width1200">
+        <div class="JGJSbig">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td valign="top">
+                        {$hz1.bb}<br>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--公共底部-->
+<include file="Home@Public:footer"/>
+
+
+<!--table-->
+<script>
+    function ai(ai) {
+        for (i = 1; i <= 6; i++) {
+            if (i == ai) {
+                document.getElementById("k" + ai).style.display = "block";
+                document.getElementById("s_y_dang_" + ai).className = "fist";
+
+            } else {
+                document.getElementById("k" + i).style.display = "none";
+                document.getElementById("s_y_dang_" + i).className = "none";
+
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

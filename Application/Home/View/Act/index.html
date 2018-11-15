@@ -1,0 +1,93 @@
+<!--公共头部-->
+<include file="Home@Public:header"/>
+<include file="Home@Public:Middle"/>
+<div class="NYbig">
+    <div class="width1200">
+        <div class="HDSPbig">
+            <div class="left HDSPleft">
+                <div class="HSPLtitle">
+                    <a
+                    <if condition="$_GET['ppt'] eq ''"> class="fist"</if>
+                    href="{:U('/Act/index',array('id'=>$_GET['id']))}" >指导老师</a>
+                    <a
+                    <if condition="$_GET['ppt'] eq 2"> class="fist"</if>
+                    href="{:U('/Act/index',array('id'=>$_GET['id'],'ppt'=>'2'))}">项目组</a>
+                    <a
+                    <if condition="$_GET['ppt'] eq 3"> class="fist"</if>
+                    href="{:U('/Act/index',array('id'=>$_GET['id'],'ppt'=>'3'))}">往届学生</a>
+                    <div class="clear"></div>
+                </div>
+                <div class="HSPLcent">
+                    <ul>
+                        <volist name="voice" id="vo">
+                            <li>
+                                <div class="HSPLlistO">
+                                    <dl>
+                                        <dt>
+                                            <a href="{:U('/Act/i',array('id'=>$vo['id']))}">
+                                                <img src="__PUBLIC__/update/{$vo.img}" width="257" height="192">
+                                            </a>
+                                        </dt>
+                                        <dd>
+                                            <a href="{:U('/Act/i',array('id'=>$vo['id']))}">{$vo.name}</a>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="HSPLltwo">
+                                    <div class="SPXGleft">
+                                        <dd style="text-align: center;">{$vo.ynum}</dd>
+                                        <dd style="text-align: center;">{$vo.snum}</dd>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                            </li>
+                        </volist>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="pageB">
+                    {$pager}
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="right HDSPright">
+                <div class="HDSPRtit">推荐成员</div>
+                <div class="hl_main5_content">
+                    <div class="hl_main5_content1">
+                        <ul>
+                            <li>
+                                <div class="HDSPRcent">
+                                    <volist name="voicep" id="vo" offset="0" length='4'>
+                                        <div class="HSRlist">
+                                            <div class="left HSRimg"><a
+                                                    href="{:U('/Act/i',array('id'=>$vo['id']))}"><img
+                                                    src="__PUBLIC__/update/{$vo.img}" width="163"></a></div>
+                                            <div class="right HSRong">
+                                                <dl>
+                                                    <dt>{$i}</dt>
+                                                    <dd><a href="{:U('/Act/i',array('id'=>$vo['id']))}">{$vo.name}</a>
+                                                    </dd>
+                                                    <dd><a href="{:U('/Act/i',array('id'=>$vo['id']))}">{$vo.ynum}</a>
+                                                    </dd>
+                                                    <dd><a href="{:U('/Act/i',array('id'=>$vo['id']))}">{$vo.snum}</a>
+                                                    </dd>
+                                                </dl>
+                                            </div>
+                                            <div class="clear"></div>
+                                        </div>
+                                    </volist>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<!--公共底部-->
+<include file="Home@Public:footer"/>
+</body>
+</html>

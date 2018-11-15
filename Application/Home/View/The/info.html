@@ -1,0 +1,85 @@
+<!--公共头部-->
+<link rel="stylesheet" href="__PUBLIC__/Home/css/amazeui.css">
+<link rel="stylesheet" href="__PUBLIC__/Home/css/jtree.css">
+<include file="Home@Public:header"/>
+<include file="Home@Public:Middle"/>
+<div class="NYbig">
+    <div class="width1200">
+        <div class="main-container">
+            <div class="am-g am-padding-top">
+                <div class="am-u-md-9  am-padding-left-0">
+                    <div class="zrd-div am-padding">
+                        <div class="">
+                            <img class="zrd-lineblock am-margin-right zrd-roadmap-image"
+                                 src="/Public/update/{$list.img}">
+                            <div class="am-text-middle zrd-lineblock" style="width:80%;">
+                                <span class="am-margin-right zrd-roadmap-name">{$list.name}</span>
+                                <button class="zrd-roadmap-btn">知识图谱</button>
+                                <div class="am-margin-top am-progress am-progress-striped am-progress-xs am-round">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="am-padding-top-sm"><font class="zrd-font-chap">{$list.title}</font></div>
+                    </div>
+                    <volist name="erke" id="vo">
+                        <if condition="$vo['pid'] eq $list['id']">
+                            <div class="am-margin-top-sm">
+                                <div class="zrd-div am-padding-top-sm am-margin-bottom-sm">
+                                    <span class="zrd-span-center zrd-skill-name">{$vo.name}</span>
+                                    <div class="am-padding-horizontal">
+                                        <hr class="am-divider am-divider-default zrd-skill-separator">
+                                        <div class="am-margin-bottom">
+                                            <volist name="sanke" id="o">
+                                                <if condition="$o['pid'] eq $vo['id']">
+                            <span class="zrd-block am-padding-bottom-sm">
+                                <span class="zrd-course-name">{$o.name}</span>
+                            </span>
+                                                    <div class="am-g am-padding-left">
+                                                        <volist name="sike" id="p">
+                                                            <if condition="$p['pid'] eq $o['id']">
+                                                                <div class="am-padding-bottom-xs am-u-sm-4 ">
+                                                                    <!-- <a href="{:U('/The/ip',array('kp'=>$p['id']))}""> -->
+                                                                    <a <?php echo $p['view']?>>
+                                                                    <span class="am-icon-caret-square-o-right zrd-danger"></span>
+                                                                    <span class="zrd-font-chap">{$p.name}</span>
+                                                                    </a>
+                                                                </div>
+                                                            </if>
+                                                        </volist>
+                                                    </div>
+                                                </if>
+                                            </volist>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </if>
+                    </volist>
+                </div>
+                <div class="am-u-md-3 am-padding-horizontal-0">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--公共底部-->
+<include file="Home@Public:footer"/>
+<!--table-->
+<script>
+    function ai(ai) {
+        for (i = 1; i <= 6; i++) {
+            if (i == ai) {
+                document.getElementById("k" + ai).style.display = "block";
+                document.getElementById("s_y_dang_" + ai).className = "fist";
+
+            } else {
+                document.getElementById("k" + i).style.display = "none";
+                document.getElementById("s_y_dang_" + i).className = "none";
+
+            }
+        }
+    }
+</script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!--公共头部-->
+<include file="Enem@Public:header"/>
+
+<include file="Enem@Public:Middle"/>
+
+<div class="NYbig">
+    <div class="width1200">
+        <div class="NEWbig">
+            <ul>
+                <volist name='voice' id='vo'>
+                    <li>
+                        <div class="left NEWleft"><a href="{:U('/enem/New/i',array('id'=>$vo['id']))}"><img
+                                src="__PUBLIC__/update/{$vo.img}" width="228"></a></div>
+                        <div class="right NEWright">
+                            <dl>
+                                <dt><a href="{:U('/enem/New/i',array('id'=>$vo['id']))}">{$vo.title|htmlspecialchars_decode|strip_tags|mb_substr=0,30,'utf-8'}......</a>
+                                </dt>
+                                <dd>{$vo.content|htmlspecialchars_decode|strip_tags|mb_substr=0,220,'utf-8'}......<a
+                                        href="{:U('/enem/New/i',array('id'=>$vo['id']))}">[详情]</a></dd>
+                                <dd class="dd1">发布：{$vo.create|date = "m月.d日",###}</dd>
+                            </dl>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="pageB">
+            {$pager}
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<!--公共底部-->
+<include file="Home@Public:footer"/>
+
+</body>
+
+</html>

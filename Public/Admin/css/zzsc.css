@@ -1,0 +1,88 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "microsoft yahei";
+	background-color: #eee;
+}
+
+/*.box{overflow: hidden}*/
+/*.box input{display:inline-block !important;margin-left:10px;}*/
+#chenkbox {
+	margin: 100px auto;
+	width: 800px;
+	position: relative;
+}
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+	background-color: #fff;
+}
+th {
+	background: #ebf3f0;
+	font-size: 13px;
+	color: #000002;
+	height: 25px;
+	cursor: pointer;
+}
+th, td {
+	word-wrap: break-word;
+	text-align: center;
+	border: 1px solid #dcdbdb;
+	padding: 5px 10px;
+}
+#box {
+	position: absolute;
+	display: none;
+	background: #fff;
+	text-align: center;
+	top: 0;
+	background-color: #000;
+	background-color: rgba(0,0,0,0.8);
+	color: #fff;
+	height: 100%;
+	cursor: move;
+}
+#box p {
+	line-height: 2;
+}
+
+	.manage{
+		color:#999;
+	}
+	.manage_t{
+		color:blue;
+	}
+  /*div*/
+  .main_content{
+    margin-left:20px;
+  }
+  /*提交按钮*/
+  .submit_input{
+      width: 120px;height: 48px;line-height:48px;background: #2a98e3;color:#fff;font-size: 14px;text-align: center;display: block;margin:20px auto;border-radius:10px;border:none;cursor:pointer;
+  }
+  /*form表单*/
+  .form_content{
+    padding-right: 20px;padding-top:20px;
+  }
+  /*select*/
+  .select_content{
+      min-width: 160px;height: 32px;line-height: 32px;margin-left:8px;
+  }
+  /*textarea*/
+  .textarea_content{
+      width:100%;min-height: 200px;padding: 4px 0;display:block;margin-top:10px;
+
+  }
+  /*input*/
+  .input_content{
+      width: 100%;height: 24px;line-height: 24px;padding: 4px 0;display:block;margin-top:10px;
+  }
+
+  .page{text-align:center;margin-top:20px;}
+  .page span{display:inline-block;background:#eee;border:1px solid #ccc;padding:4px 8px;margin:5px;border-radius:4px;cursor:pointer;}
+  .page span.current{background:none;border-color:transparent;}
+  .logo{width:300px;}

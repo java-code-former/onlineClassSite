@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" style="overflow-x:hidden;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<script type="text/javascript" src="__PUBLIC__/Admin/js/jquery-1.7.1.min.js"></script>
+<script src="__PUBLIC__/Admin/js/commonjs-f3ed76e5a9.js"></script>
+<script src="__PUBLIC__/Admin/js/headerjs-3dbdd59df1.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/commoncss-a7db0bcb18.css"/>
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/backheadercss-78c9f8ef71.css"/>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/webuploader.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/jquery.fancybox.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/umeditor.min.css">
+<title>首页轮播</title>
+</head>
+<body class="bg-f3">
+    <include file="Admin@Public:head"/>
+    <include file="Admin@Public:left"/>
+    <div class="con_right">
+    <div class="con_box">
+        <form method ="POST" action ="{:U('Admin/img/imgedit',array('id'=>$img['id']))}" enctype="multipart/form-data">
+        <div class="show_table">
+                  <table class="c-99" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td width="80" class="title"><span class="c-ec5022">＊</span>首页轮播图一</td>
+                         <td colspan="2">
+                            <input type ="file"  name="img1"><img src ="__ROOT__{$img.img1}" width ="150px" height ="70px">
+                         </td>
+                       
+                    </tr>
+                     <input type = "hidden" name ="img1" value ="{$img.img1}">
+
+                     <tr>
+                        <td width="80" class="title"><span class="c-ec5022">＊</span>首页轮播图二</td>
+                        <td colspan="2"><input type ="file" name="img2"><img src ="__ROOT__{$img.img2}" width ="150px" height ="70px"></td>
+                        
+                    </tr>
+                     <input type = "hidden" name ="img2" value ="{$img.img2}">
+
+                     <tr>
+                        <td width="80" class="title"><span class="c-ec5022">＊</span>首页轮播图三</td>
+                        <td colspan="2"><input type ="file" name="img3"><img src ="__ROOT__{$img.img3}" width ="150px" height ="70px"></td>
+                        
+                    </tr>
+ 					<input type = "hidden" name ="img3" value ="{$img.img3}">
+
+                </table>
+            </div><center><span style ="color:red;font-size:18px;float:left;">注:该图片上传大小为1440*450px</span><br>
+          <h4><input type ="submit" value = "修改" class="btn_next"></h4></div>
+           </form>
+
+</div>
+</div>
+
+
+</body>
+</html>
